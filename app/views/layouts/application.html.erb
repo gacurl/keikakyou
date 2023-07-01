@@ -10,7 +10,7 @@
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
 
-  <body>
+  <body class="body">
     <nav class="navbar navbar-expand-lg bg-light">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">Keikakyou</a>
@@ -46,11 +46,7 @@
     <div class="container">
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
-      <div class="card">
-        <div class="card-body">
-          <%= yield %>
-        </div>
-      </div>
+        <%= yield %>
     </div>
   </body>
 </html>
