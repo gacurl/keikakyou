@@ -43,9 +43,10 @@ class TasksController < ApplicationController
 
   # DELETE projects/1/tasks/1
   def destroy
+    set_task
     @task.destroy
 
-    redirect_to @project
+    # redirect_to @project
   end
 
   private 
