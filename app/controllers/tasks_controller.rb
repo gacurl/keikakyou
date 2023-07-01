@@ -43,7 +43,6 @@ class TasksController < ApplicationController
 
   # DELETE projects/1/tasks/1
   def destroy
-    byebug
     @task.destroy
 
     redirect_to @project
