@@ -1,6 +1,12 @@
-<h1>Editing task</h1>
+<h1><strong>Tasks Edit Page</strong></h1>
+<%= link_to 'Back to Projects', projects_path, class: "btn btn-outline-dark mb-4" %>
 
-<%= render 'form' %>
+<div class="card">
+  <div class="card-body">
+    <h2 class='card-title mb-4'>
+      <span>Editing task</span>
+    </h2>
 
-<%= link_to 'Show', [@task.project, @task] %> |
-<%= link_to 'Back', project_tasks_path(@task.project) %>
+    <%= render 'form' %>
+  </div>
+</div>
