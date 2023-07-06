@@ -15,14 +15,13 @@
         <% if @task.errors.any? %>
           <div id="error_explanation">
             <h2><%= pluralize(@task.errors.count, "error") %> prohibited this task from being saved:</h2>
-            
             <ul>
-            <% @task.errors.full_messages.each do |msg| %>
-              <li><%= msg %></li>
-            <% end %>
+              <% @task.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+              <% end %>
             </ul>
-          </div>
-        <% end %>
+          </div> <%# /error_explanation %>
+        <% end %> <%# /task.errors div %>
 
         <%= f.hidden_field :status, value: 'not-started' %>
         <div class="input-group">
@@ -30,44 +29,31 @@
           <div class="input-group-append">
             <%= f.submit class: 'btn btn-primary' %>
           </div>
-        </div>
-      <% end %>
+        </div> <%# /input group %>
+      <% end %> <%# /form_for %>
     </div>
-  </div>
-</div>
 
-<div>
-  <hr>
+  <h4>Listing tasks</h4>
 
-  <h1>Listing tasks</h1>
-
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Description</th>
-    <th>Status</th>
-    <th>Project</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @project.tasks.each do |task| %>
-  <% if task.persisted? %>
-    <tr>
-      <td><%= task.name %></td>
-      <td><%= task.description %></td>
-      <td><%= task.status %></td>
-      <td><%= link_to 'Show', [task.project, task] %></td>
-      <td><%= link_to 'Edit', edit_project_task_path(task.project, task) %></td>
-      <td><%= link_to 'Destroy', [task.project, task], { 'turbo_method': :delete, turbo_confirm: 'You are deleting a TASK. Are you certain?' } %></td>
-    </tr>
+  <% @project.tasks.each do |task| %>
+    <% if task.persisted? %>
+      <div class="card mb-3">
+        <div class="card-body">
+          <div class="d-flex justify-content-between">
+            <span class="badge mb-3"><%= task.status %></span>
+              <div>
+                <%= link_to 'Edit', edit_project_task_path(task.project, task), class: "btn btn-warning btn-sm" %>
+                <%= link_to 'Destroy', [task.project, task], data: { 'turbo_method': :delete, turbo_confirm: 'You are deleting a TASK. Are you certain?' }, class: "btn btn-danger btn-sm" %>
+              </div>
+          </div> <%# /d-flex %>         
+      <h5 class="card-title mb-2">
+        <span><%= task.name %></span>
+      </h5>
+      <p><%= task.description %></p>
+      </div> <%# /card-body %>
+    </div> <%# /card mb-3 %>     
     <% end %>
-<% end %>
-</table>
+  <% end %>
+  </div>
+</div> <%# /card %>
 
-<br />
-
-<%= link_to 'New Task', new_project_task_path(@project.id) %>
-
-</div>
