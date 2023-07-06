@@ -1,0 +1,27 @@
+<section class="jumbotron jumbotron-fluid">
+  <div class="container text-center">
+    <h1 class="display-4">Keikakyou</h1>
+    <%= image_tag ("bamboo.jpg"), width: 200, height: 150, :class => "img-thumbnail flex-shrink-0" %>
+    <p class="lead mt-3">A small project management app built with Ruby on Rails.</p>
+    <hr class="my-4">
+  </div>
+</section>
+
+<section class="section">
+	<div class="container">
+		<div class="row">
+			<div class="col-9">
+				<div class="card card-body">
+					<h3 class="card-title">Keikakyou - Plan like a Samurai</h3>
+          <h6 class="card-subtitle mt-2 mb-2 text-muted">Sign up TODAY</h6>
+					<p class="card-text">Introducing Keikakyou, the project management app that takes your planning game to the next level! Inspired by the Japanese word for plan, Keikakyou blends efficiency and elegance, providing you with a seamless experience to conquer even the most intricate projects. Picture this: you're the fearless samurai of project management, and Keikakyou is your trusty katana, ready to slice through complexity and guide you towards victory.</p>
+					<p>Fellow warriors of productivity, join us on this epic quest for project success. Let Keikakyou be your guide, and together, we shall conquer the realm of efficient planning!</p>
+				</div>
+			</div>
+			<div class="col">
+				<h4>Sign Up Today</h4>
+				<%= button_to 'Sign Up', new_user_registration_path, class: "mt-4 btn btn-primary" %>
+			</div>
+		</div>
+	</div>
+</section>
