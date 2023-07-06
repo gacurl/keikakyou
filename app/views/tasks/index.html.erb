@@ -1,3 +1,4 @@
+<h1><strong>  This is the Tasks Index <Page></Page></strong></h1>
 <h1>Listing tasks</h1>
 
 <table>
@@ -17,7 +18,11 @@
     <td><%= task.description %></td>
     <td><%= task.status %></td>
     <td><%= link_to 'Edit', edit_project_task_path(task.project, task) %></td>
-    <td><%= link_to 'Destroy', [@task.project, @task], { 'turbo_method': :delete, turbo_confirm: 'You are deleting a TASK. Are you certain?' } %></td>
+    <%= link_to 'Destroy',
+        [task.project, task], 
+        { 'turbo-method': :delete, 
+        turbo_confirm: 'You are deleting a TASK. Are you certain?' } 
+        %>
   </tr>
 <% end %>
 </table>

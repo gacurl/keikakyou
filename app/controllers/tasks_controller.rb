@@ -46,7 +46,7 @@ class TasksController < ApplicationController
     set_task
     @task.destroy
 
-    # redirect_to @project
+    redirect_to @project
   end
 
   private 

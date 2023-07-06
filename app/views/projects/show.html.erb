@@ -50,8 +50,8 @@
               <div>
                 <%= link_to 'Edit', edit_project_task_path(task.project, task), class: "btn btn-warning btn-sm" %>
                 <%= link_to 'Destroy', 
-                    [@task.project, @task], 
-                    data: { 'turbo_method': :delete, 
+                    [task.project, task], 
+                    data: { 'turbo-method': :delete, 
                     turbo_confirm: 'You are deleting a TASK. Are you certain?' }, 
                     class: "btn btn-danger btn-sm" 
                 %>
