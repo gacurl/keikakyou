@@ -1,5 +1,6 @@
 @import 'bootstrap/scss/bootstrap';
 @import 'bootstrap-icons/font/bootstrap-icons';
+@import url('https://fonts.googleapis.com/css2?family=Finlandica&family=Merriweather:ital@0;1&display=swap');
 
 :root {
   --dark-color: #393646;
@@ -10,4 +11,5 @@
 
 body {
   background-color: var(--font-color);
+  font-family: 'Merriweather', serif;
 }
