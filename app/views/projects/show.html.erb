@@ -9,13 +9,13 @@
       </div>
     </h2>
 
-        <div class="mb-4">
+    <div class="mb-4">
       <h6>Add task</h6>
       <%= form_for([@task.project, @task]) do |f| %>
         <% if @task.errors.any? %>
           <div id="error_explanation">
             <h2><%= pluralize(@task.errors.count, "error") %> prohibited this task from being saved:</h2>
-
+            
             <ul>
             <% @task.errors.full_messages.each do |msg| %>
               <li><%= msg %></li>
@@ -58,10 +58,9 @@
       <td><%= task.name %></td>
       <td><%= task.description %></td>
       <td><%= task.status %></td>
-      <td><%= task.project %></td>
       <td><%= link_to 'Show', [task.project, task] %></td>
       <td><%= link_to 'Edit', edit_project_task_path(task.project, task) %></td>
-      <td><%= link_to 'Destroy', [task.project, task], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <td><%= link_to 'Destroy', [task.project, task], { 'turbo_method': :delete, turbo_confirm: 'You are deleting a TASK. Are you certain?' } %></td>
     </tr>
     <% end %>
 <% end %>
