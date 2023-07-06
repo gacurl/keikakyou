@@ -1,3 +1,5 @@
+<h1><strong>Projects Show Page</strong></h1>
+
 <%= link_to 'Back to Projects', projects_path, class: "btn btn-outline-dark mb-4" %>
 <div class="card">
   <div class="card-body">
@@ -5,7 +7,11 @@
       <span><%= @project.name %></span>
       <div>
         <%= link_to "Edit this project", edit_project_path(@project), class: "btn btn-warning" %>
-        <%= link_to "Destroy", @project, data: { 'turbo_method': :delete, turbo_confirm: 'You are deleting a PROJECT. Are you certain?' }, class: "btn btn-danger" %>
+        <%= link_to "Destroy", @project, 
+            data: { 'turbo_method': :delete, 
+            turbo_confirm: 'You are deleting a PROJECT. Are you certain?' }, 
+            class: "btn btn-danger" 
+        %>
       </div>
     </h2>
 
@@ -43,7 +49,12 @@
             <span class="badge mb-3"><%= task.status %></span>
               <div>
                 <%= link_to 'Edit', edit_project_task_path(task.project, task), class: "btn btn-warning btn-sm" %>
-                <%= link_to 'Destroy', [task.project, task], data: { 'turbo_method': :delete, turbo_confirm: 'You are deleting a TASK. Are you certain?' }, class: "btn btn-danger btn-sm" %>
+                <%= link_to 'Destroy', 
+                    [@task.project, @task], 
+                    data: { 'turbo_method': :delete, 
+                    turbo_confirm: 'You are deleting a TASK. Are you certain?' }, 
+                    class: "btn btn-danger btn-sm" 
+                %>
               </div>
           </div> <%# /d-flex %>         
       <h5 class="card-title mb-2">

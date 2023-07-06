@@ -16,10 +16,8 @@
     <td><%= task.name %></td>
     <td><%= task.description %></td>
     <td><%= task.status %></td>
-    <td><%= task.project %></td>
-    <td><%= link_to 'Show', [task.project, task] %></td>
     <td><%= link_to 'Edit', edit_project_task_path(task.project, task) %></td>
-    <td><%= link_to 'Destroy', [task.project, task], { 'turbo_method': :delete, turbo_confirm: 'You are deleting a TASK. Are you certain?' } %></td>
+    <td><%= link_to 'Destroy', [@task.project, @task], { 'turbo_method': :delete, turbo_confirm: 'You are deleting a TASK. Are you certain?' } %></td>
   </tr>
 <% end %>
 </table>
