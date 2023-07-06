@@ -20,7 +20,10 @@
 			</div>
 			<div class="col">
 				<h4>Sign Up Today</h4>
-				<%= button_to 'Sign Up', new_user_registration_path, class: "mt-4 btn btn-primary" %>
+				<%= link_to 'Sign Up', new_user_registration_path, class: "mt-2 btn btn-primary" %>
+				<hr>
+				<h5 class="mt-2">Already have an account?</h5>
+				<%= link_to 'Sign In', new_user_session_path, class: "mt-2 btn btn-primary" %>
 			</div>
 		</div>
 	</div>
