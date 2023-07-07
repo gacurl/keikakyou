@@ -34,7 +34,7 @@ class Project < ApplicationRecord
   end
 
   def total_complete
-    # tasks.select { |task| task.complete? }.count
+    tasks.select { |task| task.complete? }.count
   end
 
   def total_tasks
