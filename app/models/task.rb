@@ -13,11 +13,11 @@ class Task < ApplicationRecord
   def badge_color
     case status
     when 'not-started'
-      'secondary'
-    when 'in-progress'
-      'success'
-    when 'complete'
       'danger'
+    when 'in-progress'
+      'info'
+    when 'complete'
+      'success'
     end
   end
 

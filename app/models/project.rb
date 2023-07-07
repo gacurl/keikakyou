@@ -8,24 +8,24 @@ class Project < ApplicationRecord
   def badge_color
     case status
     when 'not-started'
-      'secondary'
+      'success'
     when 'in-progress'
       'info'
     when 'complete'
-      'success'
+      'danger'
     end
   end
 
   def status
     return 'not-started' if tasks.none?
 
-    if tasks.all? { |task| task.complete? }
-      'complete'
-    elsif tasks.any? { |task| task.in_progress? || task.complete? }
-      'in-progress'
-    else
-      'not-started'
-    end
+  #   if tasks.all? { |task| task.complete? }
+  #     'complete'
+  #   elsif tasks.any? { |task| task.in_progress? || task.complete? }
+  #     'in-progress'
+  #   else
+  #     'not-started'
+  #   end
   end
 
   def percent_complete
@@ -34,7 +34,7 @@ class Project < ApplicationRecord
   end
 
   def total_complete
-    tasks.select { |task| task.complete? }.count
+    # tasks.select { |task| task.complete? }.count
   end
 
   def total_tasks

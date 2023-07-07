@@ -8,11 +8,9 @@
     <% @projects.each do |project| %>
       <%= link_to project, class: 'text-decoration-none' do %>
         <div class="card mb-3">
-          <div class="card-body">
+          <div class="card-body"></div>
             <div class="mb-3">
-              <span class="badge badge-<%= project.badge_color %>">
-                <%= project.status %>
-              </span>
+              <span class="badge bg-<%= project.badge_color %> mb-3"><%= project.status %></span>
               <span class='text-secondary'>
                 <small>
                   <%= project.percent_complete %>% complete
