@@ -19,13 +19,13 @@ class Project < ApplicationRecord
   def status
     return 'not-started' if tasks.none?
 
-  #   if tasks.all? { |task| task.complete? }
-  #     'complete'
-  #   elsif tasks.any? { |task| task.in_progress? || task.complete? }
-  #     'in-progress'
-  #   else
-  #     'not-started'
-  #   end
+    if tasks.all? { |task| task.complete? }
+      'complete'
+    elsif tasks.any? { |task| task.in_progress? || task.complete? }
+      'in-progress'
+    else
+      'not-started'
+    end
   end
 
   def percent_complete
